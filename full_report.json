@@ -1,0 +1,184 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-08-09T22:25:40.838Z",
+    "end": "2020-08-09T22:25:40.838Z",
+    "duration": 57606,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a6fc73ab-3c1c-4bbc-b426-c7b84cb0acb8",
+      "title": "",
+      "fullFile": "cypress\\integration\\listagem.spec.js",
+      "file": "cypress\\integration\\listagem.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a9aaf5d5-745b-4fe8-9a23-408a65d27506",
+          "title": "Listagem",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Listagem sem registros",
+              "fullTitle": "Listagem Listagem sem registros",
+              "timedOut": null,
+              "duration": 17306,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.server();\ncy.route({\n  method: 'GET',\n  url: '**//api/1/databases/userdetails/collections/newtable?**',\n  status: 200,\n  response: 'fx:webtable-get-empty'\n}).as('getNewtable');\ncy.visit('WebTable.html');\ncy.get('div[role=row]').should('have.length', 1);",
+              "err": {},
+              "uuid": "665a22c4-e3f9-41ef-9e76-d35b99fe8ab6",
+              "parentUUID": "a9aaf5d5-745b-4fe8-9a23-408a65d27506",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Listagem com apenas um registro",
+              "fullTitle": "Listagem Listagem com apenas um registro",
+              "timedOut": null,
+              "duration": 3306,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.server();\ncy.route({\n  method: 'GET',\n  url: '**//api/1/databases/userdetails/collections/newtable?**',\n  status: 200,\n  response: 'fx:webtable-get-only'\n}).as('getNewtable');\ncy.visit('WebTable.html');\ncy.get('div[role=row] div[role=gridcell]').eq(4).find('div').as('gridCellPhone');\ncy.get('@gridCellPhone').should('contain.text', '3856549267');",
+              "err": {},
+              "uuid": "a6e645e0-3b6e-4228-834f-0154f4bea13f",
+              "parentUUID": "a9aaf5d5-745b-4fe8-9a23-408a65d27506",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "665a22c4-e3f9-41ef-9e76-d35b99fe8ab6",
+            "a6e645e0-3b6e-4228-834f-0154f4bea13f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 20612,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "b94e9e2e-06e2-46de-a661-d10f8d2bb7b3",
+      "title": "",
+      "fullFile": "cypress\\integration\\cadastro.spec.js",
+      "file": "cypress\\integration\\cadastro.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f0b1ac69-7b03-4379-bf63-e466bf7fd846",
+          "title": "Cadastro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "cadastro de usuário no site",
+              "fullTitle": "Cadastro cadastro de usuário no site",
+              "timedOut": null,
+              "duration": 36994,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.server();\ncy.route('POST', '**//api/1/databases/userdetails/collections/newtable?**').as('postNewtable');\ncy.route('POST', '**//api/1/databases/userdetails/collections/usertable?**').as('postUsertable');\ncy.route('GET', '**//api/1/databases/userdetails/collections/newtable?**').as('getNewtable');\ncy.visit('Register.html');\ncy.get('input[placeholder=\"First Name\"]').type(chance.first());\ncy.get('input[ng-model ^=Last]').type(chance.last());\ncy.get('input[ng-model ^=Email]').type(chance.email());\ncy.get('input[ng-model ^=Phone]').type(chance.phone({\n  formatted: false\n}));\ncy.get('input[value=FeMale]').check();\ncy.get('input[type=checkbox]').check('Cricket');\ncy.get('input[type=checkbox]').check('Hockey');\ncy.get('select#Skills').select('Javascript');\ncy.get('select#countries').select('Argentina');\ncy.get('select#country').select('Australia', {\n  force: true\n});\ncy.get('select#yearbox').select('1996');\ncy.get('select[ng-model ^=month]').select('February');\ncy.get('select#daybox').select('24');\ncy.get('input#firstpassword').type('Agilizei@2020');\ncy.get('input#secondpassword').type('Agilizei@2020');\ncy.get('input#imagesrc').attachFile('auto.png');\ncy.get('button#submitbtn').click();\ncy.wait('@postNewtable').then(function (resNewtable) {\n  expect(resNewtable.status).to.eq(200);\n});\ncy.wait('@postUsertable').then(function (resUsertable) {\n  expect(resUsertable.status).to.eq(200);\n});\ncy.wait('@getNewtable').then(function (resNewtable) {\n  expect(resNewtable.status).to.eq(200);\n});\ncy.url().should('contain', 'WebTable');",
+              "err": {},
+              "uuid": "bd9d3307-0f14-4581-bcde-210ff0c31383",
+              "parentUUID": "f0b1ac69-7b03-4379-bf63-e466bf7fd846",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bd9d3307-0f14-4581-bcde-210ff0c31383"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 36994,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
