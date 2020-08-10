@@ -8,7 +8,7 @@ A Semana Agilizei 1.0 é um treinamento de automação de testes com Cypress, on
 ### Sobre o projeto
 O projeto consiste na automação de testes de interface de um [site](http://demo.automationtesting.in) utilizando Cypress.
 
-### Setup
+### Setup 🛠️
 Primeiramente, é necessário instalar o [Node.js](https://nodejs.org/en/download/)
 
 
@@ -32,7 +32,7 @@ Para executá-lo:
 `cy:open:cucumber` e/ou
 `cy:run:cucumber` (modo headless)
 
-### Reports
+### Reports :page_facing_up:
 Para gerar relatórios, foram usados dois reports generators:
 * Mochawesome
 * Cucumber HTML Reports
