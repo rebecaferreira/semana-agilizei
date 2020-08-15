@@ -18,19 +18,19 @@ Para inicializar o projeto, basta digitar no terminal (dentro da pasta do projet
 
 Após, para rodar os testes, digitar no terminal:
 
-`cy:open` ou `npx cypress open`
+`npm run cy:open` ou `npx cypress open`
 
 Para executar testes sem navagador (modo headless):
 
-`cy:run` ou `npx cypress run`
+`npm run cy:run` ou `npx cypress run`
 
 ### Execução com Cucumber
 Neste projeto, foi implementado o framework Cucumber. 
 
 Para executá-lo:
 
-`cy:open:cucumber` e/ou
-`cy:run:cucumber` (modo headless)
+`npm run cy:open:cucumber` e/ou
+`npm run cy:run:cucumber` (modo headless)
 
 ### Reports :page_facing_up:
 Para gerar relatórios, foram usados dois reports generators:
