@@ -20,7 +20,7 @@ Após, para rodar os testes, digitar no terminal:
 
 `npm run cy:open` ou `npx cypress open`
 
-Para executar testes sem navagador (modo headless):
+Para executar testes sem navegador (modo headless):
 
 `npm run cy:run` ou `npx cypress run`
 
