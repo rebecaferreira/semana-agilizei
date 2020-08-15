@@ -3,7 +3,7 @@
 
 ## Projeto desenvolvido durante a Semana Agilizei 1.0
 
-A Semana Agilizei 1.0 é um treinamento de automação de testes com Cypress, online e gratuito, com duração de uma semana e com muitos exercícios práticos, acompanhamento e focado em ajudar cada pessoa a atingir seus objetivos com o treinamento. 
+A Semana Agilizei 1.0 é um treinamento de automação de testes com Cypress, do zero à integração contínua, online e gratuito, com duração de uma semana e com muitos exercícios práticos, com acompanhamento e focado em ajudar cada pessoa a atingir seus objetivos.
 
 ### Sobre o projeto
 O projeto consiste na automação de testes de interface de um [site](http://demo.automationtesting.in) utilizando Cypress.
@@ -39,9 +39,16 @@ Para gerar relatórios, foram usados dois reports generators:
 
 #### Gerando relatório com Mochawesome:
 
-`report:merge` &
-`report:mocha`
+`npm run report:merge` &
+`npm run report:mocha`
 
 #### Gerando relatório com Cucumber HTML Reports:
 
-`report:cucumber` 
+`npm run report:cucumber` 
+
+
+### Integração contínua :arrows_counterclockwise:
+
+Foi utilizado o **Github Actions** para a integração contínua do projeto, e o **GitHub Pages** para publicar os relatórios em formato `.html`
+
+:link: [Link para o relatório](https://rebecaferreira.github.io/semana-agilizei/)
